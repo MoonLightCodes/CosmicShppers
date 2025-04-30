@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+.card:hover{
+  transform: scale(1.03);
+  transition: all ease-in 0.2s;
+}
+.remScroll{
+  scrollbar-width: none;
+}
+.cursive-text {
+  font-family: 'Dancing Script', cursive;
+}
+.selectnone{
+  user-select: none;
+}
+.shine::before{
+position: absolute;
+content: '';
+width: 100%;
+height: 40%;
+transform: rotate(120deg);
+background: linear-gradient(90deg, transparent, rgba(235, 128, 5, 0.507), transparent);
+animation: shine 2s infinite;
+}
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
