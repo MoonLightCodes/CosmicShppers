@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 
 const PlaceOrder = ({ deliverAddress }) => {
   const navigate = useNavigate();
-  const { runn, setClear } = useContext(cartContex);
+  const { runn, setClear,cartCount } = useContext(cartContex);
   let tobePay = runn
     .filter((e) => e.added === true)
     .reduce((acc, curr) => {
@@ -66,12 +66,12 @@ const PlaceOrder = ({ deliverAddress }) => {
           className="p-1 bg-amber-400 cursor-pointer text-white tracking-wider rounded "
           onClick={() => {
             toast.success(
-              `🎆#order_id ${Math.floor(
-                Math.random() * 10000000
-              )} order placed succesfully`,
+              `🎆#order_id ${1000000+Math.floor(
+                Math.random() * 9999999
+              )} ${cartCount} items placed succesfully`,
               {
                 position: "bottom-right",
-                autoClose: 1000,
+                autoClose: 2000,
                 hideProgressBar: false,
                 closeOnClick: false,
                 pauseOnHover: false,

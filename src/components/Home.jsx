@@ -132,7 +132,10 @@ const Home = () => {
                     </div>
                     <button
                       className="text-xs mt-2 bg-amber-400  flex gap-2 items-center text-center mx-auto  rounded-full p-2 cursor-pointer"
-                      onClick={!e.added ? (a) => addCart(a, e) : undefined}
+                      onClick={!e.added ? (a) =>{
+                        addCart(a, e);
+                        a.stopPropagation();
+                      } : undefined}
                     >
                       {!e.added ? (
                         <>
@@ -140,7 +143,7 @@ const Home = () => {
                           <FaCartPlus className="text-xs" />
                         </>
                       ) : (
-                        <div className="flex items-center gap-8">
+                        <div className="flex items-center gap-8" onClick={(a) => a.stopPropagation()}>
                           <FaMinus onClick={(a) => addCart(a, e, -1)} />
                           <p>{e.cartCount}</p>
                           <FaPlus onClick={(a) => addCart(a, e, 1)} />
