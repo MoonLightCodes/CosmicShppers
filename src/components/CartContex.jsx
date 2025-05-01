@@ -11,6 +11,7 @@ const CartContex = ({ children }) => {
   const [cartCount, setCartCount] = useState(0);
   const [rerend, setRerend] = useState(true);
   const [popup, setpopup] = useState(null);
+  const [clear, setClear] = useState(false);
   const [address, setAddress] = useState([
     {
       id: 1,
@@ -48,7 +49,8 @@ const CartContex = ({ children }) => {
     const upRun = runner.map((e) => ({ ...e, added: false, cartCount: 0 }));
     setRunn(upRun);
     setContent(upRun);
-  }, []);
+    setCartCount(0);
+  }, [clear]);
   const addCart = (a, e, chn = 1) => {
     a.stopPropagation();
     let cur = e;
@@ -114,7 +116,7 @@ const CartContex = ({ children }) => {
         setpopup,
         address,
         setAddress,
-        setRerend
+        setRerend,setClear
       }}
     >
       {popup && (
