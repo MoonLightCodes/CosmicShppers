@@ -1,8 +1,13 @@
 import React from "react";
 import { IoMdSearch } from "react-icons/io";
 import { IoCartSharp } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 
 const FeaturesBar = ({currRef,handleChangeCat,runner,cartCount,debounceSearch}) => {
+  const navigate = useNavigate();
+  const navigateTocart = () => {
+    navigate("/cart");
+  }
   return (
     <div className="flex h-[2.5rem] md:h-auto md:justify-between justify-between items-center md:p-1 bg-orange-300 text-black px-1 rounded-xl mx-1">
       <div className="flex gap-1 w-1/3 md:w-[auto]">
@@ -38,7 +43,7 @@ const FeaturesBar = ({currRef,handleChangeCat,runner,cartCount,debounceSearch}) 
             {cartCount}
           </div>
         )}
-        <IoCartSharp className="text-orange-500 cursor-pointer text-4xl " />
+        <IoCartSharp className="text-orange-500 cursor-pointer text-4xl " onClick={navigateTocart}/>
       </div>
     </div>
   );

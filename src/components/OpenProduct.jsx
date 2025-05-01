@@ -3,16 +3,22 @@ import { FaCartPlus, FaMinus, FaPlus } from "react-icons/fa6";
 import { IoIosStar, IoIosStarOutline,IoIosStarHalf } from "react-icons/io";
 import { MdCurrencyRupee } from "react-icons/md";
 import { IoCloseCircleSharp } from "react-icons/io5";
+import { useContext } from "react";
+import { cartContex } from "./CartContex";
 
 export const OpenProduct = ({ e, close, cart }) => {
+  const {setpopup} = useContext(cartContex);
+  const closePopup = () => {
+    setpopup(false);
+  };
   return (
     <div className=" p-2 rounded-sm remScroll flex flex-col gap-2  fixed top-2 left-[50%] md:w-[50%] h-[90vh] w-[80%] md:h-[100vh] overflow-scroll  transform translate-x-[-50%] z-10 border border-orange-600 bg-orange-300">
       <IoCloseCircleSharp
         className=" card fixed top-2 bg-slate-500 rounded-full cursor-pointer right-2 z-10 text-3xl "
-        onClick={close}
+        onClick={closePopup}
       />
       <div className=" w-[50%] min-w-[250px] h-[40%] sm:h-[100%] mb-3 rounded mx-auto ">
-        <img src={e.image} alt="img" className="w-[100%] h-[100%]" />
+        <img src={e.image} alt="img" className="w-[100%] h-[100%] aspect-[16/20]" />
       </div>
       <div className="text-lg  text-center">{e.title}</div>
       <div className="flex items-start">

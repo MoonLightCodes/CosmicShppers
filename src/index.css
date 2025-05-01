@@ -1,26 +1,42 @@
 @import "tailwindcss";
 
-.card:hover{
+body {
+  background: linear-gradient(
+      90deg,
+      rgba(120, 40, 5, 0.215),
+      rgba(181, 62, 11, 0.215)
+    ),
+    url("https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fG5hdHVyZXxlbnwwfHx8fDE2ODQ3NTY1MjM&ixlib=rb-4.0.3&q=80&w=1080")
+      no-repeat center center fixed;
+  background-size: cover;
+}
+
+.card:hover {
   transform: scale(1.03);
   transition: all ease-in 0.2s;
 }
-.remScroll{
+.remScroll {
   scrollbar-width: none;
 }
 .cursive-text {
-  font-family: 'Dancing Script', cursive;
+  font-family: "Dancing Script", cursive;
 }
-.selectnone{
+.selectnone {
   user-select: none;
 }
-.shine::before{
-position: absolute;
-content: '';
-width: 100%;
-height: 40%;
-transform: rotate(120deg);
-background: linear-gradient(90deg, transparent, rgba(235, 128, 5, 0.507), transparent);
-animation: shine 2s infinite;
+.shine::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 40%;
+  transform: rotate(120deg);
+  background: linear-gradient(
+    90deg,
+    rgba(235, 128, 5, 0.28),
+    rgba(235, 128, 5, 0.507),
+    rgba(235, 128, 5, 0.28)
+  );
+  animation: shine 2s infinite;
 }
 @keyframes shine {
   0% {
