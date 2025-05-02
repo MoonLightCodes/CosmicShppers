@@ -14,8 +14,7 @@ const PlaceOrder = ({ deliverAddress }) => {
       return acc + curr.price * curr.cartCount;
     }, 0);
   let discount = (tobePay * 10) / 100;
-  tobePay = tobePay - discount;
-  let tax = (tobePay * 18) / 100;
+  let tax = ((tobePay - discount) * 18) / 100;
   let total = tobePay + tax;
   const sendConfirmationEmail = () => {
     emailjs.init({
@@ -95,9 +94,9 @@ const PlaceOrder = ({ deliverAddress }) => {
           request a refund within 30 days of receiving your order. The product
           must be returned in its original condition. Please contact our support
           team for assistance.
-        </p>
-        <p className="underline underline-offset-4  text-slate-800 cursor-pointer">
+        <span className="underline underline-offset-4  text-slate-800 cursor-pointer">
           Read Policy
+        </span>
         </p>
       </div>
     </div>

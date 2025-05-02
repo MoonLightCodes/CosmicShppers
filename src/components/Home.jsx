@@ -85,7 +85,7 @@ const Home = () => {
               cartCount={cartCount}
               debounceSearch={debounceSearch}
             />
-            <div className=" grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2">
+            <div className=" grid md:grid-cols-4 sm:grid-cols-4 grid-cols-2">
               {content.map((e, i) => {
                 return (
                   <div
