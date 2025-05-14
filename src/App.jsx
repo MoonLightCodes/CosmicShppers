@@ -12,7 +12,7 @@ const App = () => {
     <CartContex>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route exact path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/address" element={<Address />} />
           <Route path="/termsandconditions" element={<TermsAndConditions />} />

@@ -90,7 +90,7 @@ const Home = () => {
                 return (
                   <div
                     key={i}
-                    className="flex flex-col  h-[20rem] shadow-[4px_4px_10px_#b8600d] text-slate-800 gap-0.5 mb-2 min-h-[50%] hover:scale-[101%] transition-all duration-300 hover:shadow-[4px_4px_20px_#b8600d] rounded mx-2 p-2 max-w-2xl "
+                    className="flex flex-col  h-[20rem] md:h-[auto] shadow-[4px_4px_10px_#b8600d] text-slate-800 gap-0.5 mb-2 min-h-[50%] hover:scale-[101%] transition-all duration-300 hover:shadow-[4px_4px_20px_#b8600d] rounded mx-2 p-2 max-w-2xl "
                     onClick={(a) => {
                       !popup ? a.stopPropagation() : undefined;
                       setpopup(e);
